@@ -1,0 +1,14 @@
+apiVersion: clusterstack.x-k8s.io/v1alpha1
+kind: ClusterStack
+metadata:
+  name: clusterstack-openstack
+  namespace: scs-cs
+spec:
+  provider: openstack # hopefully this only influences the path where the controller searches for releases
+  name: scs           # ...
+  kubernetesVersion: "1.27"
+  channel: stable
+  autoSubscribe: false
+  noProvider: true    # do not require dedicated image controller (i hope that this is what that means)
+  versions:
+    - v1
