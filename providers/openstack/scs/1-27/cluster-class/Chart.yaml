@@ -6,6 +6,6 @@ maintainers:
   - name: Syself
     email: info@syself.com
     url: https://github.com/syself
-name: openstack-scs-1-27-cluster-class-v1
+name: openstack-scs-1-27-cluster-class
 type: application
-version: "v2"
+version: "v1"
