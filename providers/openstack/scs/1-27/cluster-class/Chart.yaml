@@ -6,6 +6,6 @@ maintainers:
   - name: Syself
     email: info@syself.com
     url: https://github.com/syself
-name: docker-ferrol-1-27-cluster-class
+name: openstack-scs-1-27-cluster-class-v1
 type: application
 version: "v2"
