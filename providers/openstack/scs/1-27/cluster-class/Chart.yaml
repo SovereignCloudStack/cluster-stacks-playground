@@ -1,11 +1,11 @@
 apiVersion: v2
 description: |
   This chart installs and configures:
-  * Docker Ferrol Cluster Class
+  * Openstack Ferrol Cluster Class
 maintainers:
-  - name: Syself
-    email: info@syself.com
-    url: https://github.com/syself
-name: openstack-scs-1-27-cluster-class
+  - name: dNation
+    email: cloud@dNation.cloud
+    url: https://dnation.cloud
+name: openstack-ferrol-1-27-cluster-class
 type: application
 version: "v1"

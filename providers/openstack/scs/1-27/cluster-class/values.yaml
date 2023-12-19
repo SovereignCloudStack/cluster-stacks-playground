@@ -1,5 +1,11 @@
 images:
   controlPlane:
-    - name: ghcr.io/sovereigncloudstack/docker-ferrol-1-27-controlplaneamd64:v1
+    - name: ubuntu-capi-image-v1.27.5
   worker:
-    - name: ghcr.io/sovereigncloudstack/docker-ferrol-1-27-workeramd64:v1
+    - name: ubuntu-capi-image-v1.27.5
+externalNetworkId: ebfe5546-f09f-4f42-ab54-094e457d42e
+dnsNameservers: 
+  - 62.138.222.111 
+  - 62.138.222.222
+controlPlaneFlavor: SCS-2V:4:20
+workerFlavor: SCS-2V:4:20
