@@ -6,13 +6,13 @@ metadata:
 spec:
   template:
     spec:
-      cloudName: gx-scs
+      cloudName: {{ .Values.prefix }}-{{ .Values.testcluster_name }}
       identityRef:
-        name: cs-cluster-cloud-config
+        name: {{ .Values.testcluster_name }}-cloud-config
         kind: Secret
       apiServerLoadBalancer:
         enabled: true
       managedSecurityGroups: true
-      nodeCidr: 10.8.0.0/20
-      dnsNameservers: {{ .Values.dnsNameservers }}
-      externalNetworkId: {{ .Values.externalNetworkId }}
+      nodeCidr: {{ .Values.node_cidr }}
+      dnsNameservers: {{ .Values.dns_nameservers }}
+      externalNetworkId: {{ .Values.external_id }}

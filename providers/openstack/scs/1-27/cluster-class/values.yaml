@@ -1,11 +1,17 @@
+# TBD
 images:
   controlPlane:
     - name: ubuntu-capi-image-v1.27.5
   worker:
     - name: ubuntu-capi-image-v1.27.5
-externalNetworkId: ebfe5546-f09f-4f42-ab54-094e457d42e
-dnsNameservers: 
+etcd_defrag: false
+# Currently defined in variables.tf
+external_id: ebfe5546-f09f-4f42-ab54-094e457d42e
+dns_nameservers: 
   - 62.138.222.111 
   - 62.138.222.222
-controlPlaneFlavor: SCS-2V:4:20
-workerFlavor: SCS-2V:4:20
+control_flavor: SCS-2V:4:20
+worker_flavor: SCS-2V:4:20
+prefix: test
+testcluster_name: testcluster
+node_cidr: 10.8.0.0/20

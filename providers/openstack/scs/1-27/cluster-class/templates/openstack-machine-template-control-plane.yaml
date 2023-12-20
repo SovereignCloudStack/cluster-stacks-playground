@@ -6,8 +6,15 @@ metadata:
 spec:
   template:
     spec:
-      cloudName: gx-scs
-      flavor: {{ .Values.controlPlaneFlavor }}
+      cloudName: {{ .Values.prefix }}-{{ .Values.testcluster_name }}
+      flavor: {{ .Values.control_flavor }}
       identityRef:
         kind: Secret
-        name: cs-cluster-cloud-config
+        name: {{ .Values.testcluster_name }}-cloud-config
+      image: ubuntu-capi-image-v1.27.5
+      securityGroups:
+        - name: {{ .Values.prefix }}-allow-ssh
+        - name: {{ .Values.prefix }}-allow-icmp
+        - name: {{ .Values.prefix }}-{{ .Values.testcluster_name }}-cilium
+      # serverGroupID left blank for now
+      sshKeyName: {{ .Values.prefix }}-keypair
