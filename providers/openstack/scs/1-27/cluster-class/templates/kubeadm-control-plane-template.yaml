@@ -39,6 +39,16 @@ spec:
               provider-id: openstack:///'{{"{{"}}instance_id{{"}}"}}'
             name: '{{"{{"}}local_hostname{{"}}"}}'
         files:
+{{- if .Values.http_proxy }}
+          - content: |
+              [Service]
+              Environment={{ .Values.http_proxy }}
+              Environment={{ .Values.http_proxy }}
+              Environment={{ .Values.no_proxy }}
+            path: "/etc/systemd/system/containerd.service.d/http-proxy.conf"
+            owner: "root:root" 
+            permissions: "0644"
+{{- end }}
           {{- range $.Values.containerd_registry_files.hosts }}
           - content: |
 {{ $.Files.Get .| indent 14 }} 

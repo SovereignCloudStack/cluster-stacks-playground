@@ -20,6 +20,16 @@ spec:
           owner: root:root
           path: /etc/profile.d/proxy.sh
           permissions: "0644"
+{{- if .Values.http_proxy }}
+     - content: |
+         [Service]
+         Environment={{ .Values.http_proxy }}
+         Environment={{ .Values.http_proxy }}
+         Environment={{ .Values.no_proxy }}
+       path: "/etc/systemd/system/containerd.service.d/http-proxy.conf"
+       owner: "root:root" 
+       permissions: "0644"
+{{- end }}
       joinConfiguration:
         nodeRegistration:
           kubeletExtraArgs:

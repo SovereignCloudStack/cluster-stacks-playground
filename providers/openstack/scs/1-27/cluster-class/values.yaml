@@ -10,6 +10,7 @@ testcluster_name: testcluster
 node_cidr: 10.8.0.0/20
 etcd_unsafe_fs: false
 http_proxy: ""
+no_proxy: ""
 containerd_registry_files: 
   hosts: ["files/containerd/docker.io"]
   certs: []
@@ -20,6 +21,7 @@ etcd_defrag: false
 tweak_kubeapi_memlimit: false
 worker_machine_gen: genw01
 control_plane_machine_gen: genc01
+
 
 # TBD, currently needed:
 images:
